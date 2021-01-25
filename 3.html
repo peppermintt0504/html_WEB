@@ -22,17 +22,17 @@
   <h1><a href="index.html">WEB</a></h1>
 
   <input id="NightMode" type="button" value = "Night Mode" onclick="
-  if(document.querySelector('#NightMode').value === 'Night Mode'){
-    document.querySelector('body').style.backgroundColor = 'black';
-    document.querySelector('body').style.color = 'white';
-    document.querySelector('#NightMode').value = 'Day Mode'
+  var target = document.querySelector('body');
+  if(this.value === 'Night Mode'){
+    target.style.backgroundColor = 'black';
+    target.style.color = 'white';
+    this.value = 'Day Mode'
   }
   else{
-    document.querySelector('body').style.backgroundColor = 'white';
-    document.querySelector('body').style.color = 'black';
-    document.querySelector('#NightMode').value = 'Night Mode'
+    target.style.backgroundColor = 'white';
+    target.style.color = 'black';
+    this.value = 'Night Mode'
   }
-
   ">
 
   <ol>
