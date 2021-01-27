@@ -17,23 +17,50 @@
     }
   </style>
 
+  <script>
+
+  function mode(self){
+    var target = document.querySelector('body');
+    var alist = document.querySelectorAll('a');
+    var i = 0;
+
+    if(self.value === 'Night Mode'){
+      target.style.backgroundColor = 'black';
+      target.style.color = 'white';
+
+      while(i < alist.length){
+        alist[i].style.color = 'powderblue';
+        i = i + 1;
+      }
+
+      self.value = 'Day Mode'
+    }
+
+    else{
+      target.style.backgroundColor = 'white';
+      target.style.color = 'black';
+
+      while(i < alist.length){
+        alist[i].style.color = 'blue';
+        i = i + 1;
+      }
+
+      self.value = 'Night Mode'
+    }
+
+  }
+
+  </script>
+
 </head>
 <body>
   <h1><a href="index.html">WEB</a></h1>
 
   <input id="NightMode" type="button" value = "Night Mode" onclick="
-  var target = document.querySelector('body');
-  if(this.value === 'Night Mode'){
-    target.style.backgroundColor = 'black';
-    target.style.color = 'white';
-    this.value = 'Day Mode'
-  }
-  else{
-    target.style.backgroundColor = 'white';
-    target.style.color = 'black';
-    this.value = 'Night Mode'
-  }
+    mode(this);
   ">
+
+
 
   <ol>
     <li><a href="1.html">HTML</a></li>
