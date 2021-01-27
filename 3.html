@@ -19,51 +19,51 @@
 
   <script>
 
-  function LinkSetColor(color){
-    var alist = document.querySelectorAll('a');
-    var i = 0;
-    while(i < alist.length){
-      alist[i].style.color = color;
-      i = i + 1;
+
+  var Links = {
+    setColor:function(color){
+      var alist = document.querySelectorAll('a');
+      var i = 0;
+      while(i < alist.length){
+        alist[i].style.color = color;
+        i = i + 1;
+      }
     }
+
   }
 
-  function BodySetColor(color){
-    document.querySelector('body').style.color = color;
-  }
-
-  function BackSetColor(color) {
-    document.querySelector('body').style.backgroundColor = color;
+  var Body = {
+    setColor: function (color){
+      document.querySelector('body').style.color = color;
+    },
+    setBackColor: function(color) {
+      document.querySelector('body').style.backgroundColor = color;
+    }
   }
 
 
   function mode(self){
-    var target = document.querySelector('body');
-
     if(self.value === 'Night Mode'){
-      BackSetColor('black');
-      BodySetColor('white');
-      LinkSetColor('powderblue');
+      Body.setBackColor('black');
+      Body.setColor('white');
+      Links.setColor('powderblue');
       self.value = 'Day Mode';
     }
 
     else{
-      BackSetColor('white');
-      BodySetColor('black');
-      LinkSetColor('blue');
+      Body.setBackColor('white');
+      Body.setColor('black');
+      Links.setColor('blue');
       self.value = 'Night Mode'
     }
-
   }
-
   </script>
 
 </head>
 <body>
   <h1><a href="index.html">WEB</a></h1>
 
-  <input id="NightMode" type="button" value = "Night Mode" onclick="
-    mode(this);">
+  <input id="NightMode" type="button" value = "Night Mode" onclick="mode(this);">
 
   <ol>
     <li><a href="1.html">HTML</a></li>
