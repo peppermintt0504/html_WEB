@@ -19,32 +19,38 @@
 
   <script>
 
-  function mode(self){
-    var target = document.querySelector('body');
+  function LinkSetColor(color){
     var alist = document.querySelectorAll('a');
     var i = 0;
+    while(i < alist.length){
+      alist[i].style.color = color;
+      i = i + 1;
+    }
+  }
+
+  function BodySetColor(color){
+    document.querySelector('body').style.color = color;
+  }
+
+  function BackSetColor(color) {
+    document.querySelector('body').style.backgroundColor = color;
+  }
+
+
+  function mode(self){
+    var target = document.querySelector('body');
 
     if(self.value === 'Night Mode'){
-      target.style.backgroundColor = 'black';
-      target.style.color = 'white';
-
-      while(i < alist.length){
-        alist[i].style.color = 'powderblue';
-        i = i + 1;
-      }
-
-      self.value = 'Day Mode'
+      BackSetColor('black');
+      BodySetColor('white');
+      LinkSetColor('powderblue');
+      self.value = 'Day Mode';
     }
 
     else{
-      target.style.backgroundColor = 'white';
-      target.style.color = 'black';
-
-      while(i < alist.length){
-        alist[i].style.color = 'blue';
-        i = i + 1;
-      }
-
+      BackSetColor('white');
+      BodySetColor('black');
+      LinkSetColor('blue');
       self.value = 'Night Mode'
     }
 
@@ -57,10 +63,7 @@
   <h1><a href="index.html">WEB</a></h1>
 
   <input id="NightMode" type="button" value = "Night Mode" onclick="
-    mode(this);
-  ">
-
-
+    mode(this);">
 
   <ol>
     <li><a href="1.html">HTML</a></li>
