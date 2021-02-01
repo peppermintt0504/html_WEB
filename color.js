@@ -1,21 +1,25 @@
 var Links = {
   setColor:function(color){
-    var alist = document.querySelectorAll('a');
-    var i = 0;
-    while(i < alist.length){
-      alist[i].style.color = color;
-      i = i + 1;
-    }
+    // var alist = document.querySelectorAll('a');
+    // var i = 0;
+    // while(i < alist.length){
+    //   alist[i].style.color = color;
+    //   i = i + 1;
+    // }
+
+    $('a').css('color','red')  //$('a') -> 이 코드의 a태그를 모두 선택한다. 그 후 css함를 사용.
   }
 
 }
 
 var Body = {
   setColor: function (color){
-    document.querySelector('body').style.color = color;
+    //document.querySelector('body').style.color = color;
+    $('body').css('color',color)
   },
   setBackColor: function(color) {
-    document.querySelector('body').style.backgroundColor = color;
+    //document.querySelector('body').style.backgroundColor = color;
+    $('body').css('backgroundColor', color)
   }
 }
 
