@@ -7,7 +7,7 @@ var Links = {
     //   i = i + 1;
     // }
 
-    $('a').css('color','red')  //$('a') -> 이 코드의 a태그를 모두 선택한다. 그 후 css함를 사용.
+    $('a').css('color',color)  //$('a') -> 이 코드의 a태그를 모두 선택한다. 그 후 css함를 사용.
   }
 
 }
@@ -35,7 +35,7 @@ function mode(self){
   else{
     Body.setBackColor('white');
     Body.setColor('black');
-    Links.setColor('blue');
+    Links.setColor('black');
     self.value = 'Night Mode'
   }
 }
