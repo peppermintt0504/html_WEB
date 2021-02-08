@@ -10,10 +10,8 @@
           document.querySelector('article').innerHTML = text;
         })
       }) -->
-      function callbackme(){
-        console.log('response end');
-      }
-      fetch('html').then(callbackme);
+
+      fetch('html').then(console.log('response end'));
     ">
   </body>
 </html>
